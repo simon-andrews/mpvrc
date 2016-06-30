@@ -1,7 +1,9 @@
 package org.simonandrews.mpvrc;
 
-/**
- * Created by Simon on 6/30/16.
- */
+import static spark.Spark.get;
+
 public class ControlServer {
+    public static void main(String[] args) {
+        get("/", (req, res) -> "hello world");
+    }
 }
