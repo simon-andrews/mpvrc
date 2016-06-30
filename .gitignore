@@ -5,3 +5,6 @@
 # Jetbrains
 .idea/
 *.iml
+
+# Maven
+target/
