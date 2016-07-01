@@ -9,11 +9,11 @@ public class MpvController {
         robot = new Robot();
     }
     public String seekForward5() {
-        pressAndRelease(KeyEvent.VK_LEFT);
+        pressAndRelease(KeyEvent.VK_RIGHT);
         return ControlServer.SUCCESS_MESSAGE;
     }
     public String seekBackward5() {
-        pressAndRelease(KeyEvent.VK_RIGHT);
+        pressAndRelease(KeyEvent.VK_LEFT);
         return ControlServer.SUCCESS_MESSAGE;
     }
     public String seekForward60() {
@@ -29,7 +29,9 @@ public class MpvController {
         return ControlServer.SUCCESS_MESSAGE;
     }
     private void pressAndRelease(int keycode) {
-        //robot.keyPress(keycode);
-        //robot.keyRelease(keycode);
+        System.out.printf("pressing key with scancode %d\n", keycode);
+        robot.keyPress(keycode);
+        System.out.printf("releasing key with scancode %d\n", keycode);
+        robot.keyRelease(keycode);
     }
 }
